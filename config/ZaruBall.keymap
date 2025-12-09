@@ -162,7 +162,7 @@
 &trans  &kp F11    &kp F12   &kp UP    &none      &kp HOME  &kp PG_UP    &trans  &trans  &trans  &trans    &kp LPAR  &kp C_VOL_UP  &mkp MB1    &mkp MB2   &kp UP     &none            &none
 &trans  &none      &kp LEFT  &kp DOWN  &kp RIGHT  &kp END   &kp PG_DN    &trans  &trans  &trans  &trans    &kp RPAR  &kp C_VOL_DN  &kp KP_DOT  &kp LEFT   &kp DOWN   &kp RIGHT        &none
 &trans  &kp RSHFT            &trans    &trans     &trans    &trans                                         &trans    &kp DEL                                                          &studio_unlock
-            >;ー
+            >;j
         };
 
         lower_layer {
