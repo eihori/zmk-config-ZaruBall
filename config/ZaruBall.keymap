@@ -1,5 +1,7 @@
 // スクロール量の設定
+
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
+
 #include <behaviors/rgbled_widget.dtsi>
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
@@ -17,9 +19,10 @@
 #define SCROLL   2
 
 &trackball_listener {
-    input-processors =  <
+    input-processors = <
                          &zip_temp_layer MOUSE 500
-                        >;
+    >;
+
     scroller {
         layers = <SCROLL>;
         input-processors = <
@@ -30,7 +33,7 @@
     };
 };
 
-/{
+/ {
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
@@ -47,6 +50,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
             tap-ms = <20>; // スクロールのタップ時間
         };
 
@@ -92,7 +96,7 @@
         td4: tap_dance_4 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&kp P>, <&kp SEMI>;
+            bindings = <&lt 2 LANG2>, <&kp BACKSLASH>;
         };
     };
 };
@@ -138,11 +142,11 @@
             display-name = "Base";
             sensor-bindings = <&scroll_down_up>;
             bindings = <
-&none  &kp N1              &kp N2  &kp N3  &kp N4     &kp N5                      &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_DIVIDE                        &kp NUMBER_6  &kp N7  &kp N8     &kp N9   &kp N0                 &none
-&none  &kp Q               &kp W   &kp E   &kp R      &kp T                       &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_MULTIPLY                      &kp Y         &kp U   &kp I      &kp O    &td4                   &none
-&none  &mt LEFT_CONTROL A  &kp S   &kp D   &kp F      &kp G      &kp EQUAL        &kp KP_N1     &kp KP_N2  &kp KP_N3   &kp KP_MINUS       &td3              &kp H         &kp J   &kp K      &kp L    &kp MINUS              &none
-&none  &mt LEFT_SHIFT Z    &kp X   &kp C   &kp V      &kp B      &kp BACKSLASH    &kp KP_ENTER  &kp KP_N0  &kp KP_DOT  &kp KP_PLUS        &kp SINGLE_QUOTE  &kp N         &kp M   &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH  &none
-&td2   &kp C_MUTE                  &td0    &lt 1 TAB  &kp LANG1  &lt 2 LANG2                                                              &lt 3 SPACE       &kp ENTER                                                        &kp BACKSPACE
+&none  &kp N1              &kp N2  &kp N3  &kp N4     &kp N5                  &kp KP_N7     &kp KP_N8  &kp KP_N9   &kp KP_DIVIDE                        &kp NUMBER_6  &kp N7  &kp N8     &kp N9   &kp N0                 &none
+&none  &kp Q               &kp W   &kp E   &kp R      &kp T                   &kp KP_N4     &kp KP_N5  &kp KP_N6   &kp KP_MULTIPLY                      &kp Y         &kp U   &kp I      &kp O    &kp P                  &none
+&none  &mt LEFT_CONTROL A  &kp S   &kp D   &kp F      &kp G      &kp EQUAL    &kp KP_N1     &kp KP_N2  &kp KP_N3   &kp KP_MINUS       &td3              &kp H         &kp J   &kp K      &kp L    &kp MINUS              &none
+&none  &mt LEFT_SHIFT Z    &kp X   &kp C   &kp V      &kp B      &kp SEMI     &kp KP_ENTER  &kp KP_N0  &kp KP_DOT  &kp KP_PLUS        &kp SINGLE_QUOTE  &kp N         &kp M   &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH  &none
+&td2   &kp C_MUTE                  &td0    &lt 1 TAB  &kp LANG1  &td4                                                                 &lt 3 SPACE       &kp ENTER                                                        &kp BACKSPACE
             >;
         };
 
