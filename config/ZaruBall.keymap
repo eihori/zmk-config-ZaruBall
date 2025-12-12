@@ -135,15 +135,7 @@
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        cmb_to_layer4 {
-            bindings = <&mo 4>;
-            key-positions = <73 74>;
-            layers = <0>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
@@ -167,7 +159,7 @@
 &trans  &kp F1     &kp F2     &kp F3     &kp F4     &kp F5               &trans  &trans  &trans  &trans                   &kp F6  &kp F7    &kp F8    &kp F9    &kp F10          &trans
 &trans  &trans     &trans     &trans     &trans     &trans               &trans  &trans  &trans  &trans                   &trans  &trans    &trans    &trans    &kp PRINTSCREEN  &trans
 &trans  &kp LC(A)  &kp LC(S)  &trans     &mo 2      &trans     &trans    &trans  &trans  &trans  &trans    &kp RC(PLUS)   &trans  &mkp MB1  &mkp MB2  &kp UP    &trans           &trans
-&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &trans    &trans  &trans  &trans  &trans    &kp RC(MINUS)  &trans  &trans    &kp LEFT  &kp DOWN  &kp RIGHT        &trans
+&trans  &trans     &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)  &trans    &trans  &trans  &trans  &trans    &kp RC(MINUS)  &trans  &trans    &kp LEFT  &kp DOWN  &kp RIGHT        &trans
 &trans  &trans                &trans     &trans     &trans     &trans                                      &trans         &trans                                                 &studio_unlock
             >;
         };
@@ -180,7 +172,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans          &trans  &trans  &trans  &trans                                      &trans  &trans                                  &trans
+&trans  &trans          &trans  &trans  &trans  &trans                                      &mo 3   &trans                                  &trans
             >;
         };
 
